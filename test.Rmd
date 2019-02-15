@@ -1,0 +1,33 @@
+```{r}
+# collecting
+fileLink="https://github.com/eScienceWinterSchool/Reproducibility/raw/master/censoredworld.csv"
+dataidx=read.csv(fileLink)
+
+# Describing a categorical variable**:
+tableONI=table(dataidx$ONI)
+tableONI
+
+# Using a plot for the categorical:
+barplot(tableONI)
+
+
+# Describing the numerical variables
+summary(dataidx[,c(3,4)])
+
+# Using a plot for the numerical:
+boxplot(dataidx[,c(3,4)])
+
+## Describing bivariate relationships
+
+# * Numerical and categorical:
+
+boxplot(dataidx$FH~dataidx$Region)
+
+#Boxplots were introduced by Tuckey (Tukey, John W (1977). Exploratory Data Analysis. Addison-Wesley.)
+
+# * Numerical and Numerical
+plot(dataidx$FH~dataidx$RWB)
+
+# The scatter plot is thought to be invented by  John Frederick W. Herschel according to this link: https://qz.com/1235712/the-origins-of-the-scatter-plot-data-visualizations-greatest-invention/
+```
+
